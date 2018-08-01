@@ -3,6 +3,10 @@ FROM julia
 #ElasticFDA Requirements
 RUN apt-get update && \
     apt-get install -y --no-install-recommends && \
+    apt-get install -y rpm build-essential && \
+    apt-get install -y  libstdc++6 && \
+    apt-get install -y  ia32-libs && \
+    apt-get install -y  && \
     apt-get install -y gfortran && \
     apt-get install -y make && \
     apt-get install -y curl && \
