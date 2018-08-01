@@ -5,6 +5,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends && \
     apt-get install -y gfortran && \
     apt-get install -y make && \
+    apt-get install -y curl && \
+      apt-get install -y m4 && \
     apt-get install -y gcc 
     #&& apt-get clean && \
     #rm -rf /var/lib/apt/lists/*
