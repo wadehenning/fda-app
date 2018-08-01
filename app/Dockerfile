@@ -10,8 +10,8 @@ RUN apt-get update && \
 #Install Packages
 RUN julia -e 'Pkg.add("Dierckx")'  && \
     julia -e 'Pkg.add("NLopt")'  && \
-    julia -e 'Pkg.add("ElasticFDA","Dierckx","NLopt")'  && \
-    julia -e 'Pkg.build("ElasticFDA")'  && \
+    julia -e 'Pkg.add("ElasticFDA")'  && \
+    julia -e 'Pkg.build("ElasticFDA","Dierckx","NLopt")'  && \
     # Updating Julia Packages \
     julia -e 'Pkg.init()' && \
     julia -e 'Pkg.update()' && \
