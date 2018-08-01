@@ -9,14 +9,15 @@ RUN apt-get update && \
 
 #Install Packages
 RUN julia -e 'Pkg.add("Dierckx")'  && \
-    julia -e 'Pkg.add("NLopt")'  && \
-    julia -e 'Pkg.add("ElasticFDA")'  && \
-    julia -e 'Pkg.build("Dierckx","NLopt","ElasticFDA")'  && \
+    julia -e 'Pkg.build("Dierckx")'  && \
+    #julia -e 'Pkg.add("NLopt")'  && \
+    #julia -e 'Pkg.add("ElasticFDA")'  && \
+    #julia -e 'Pkg.build("Dierckx","NLopt","ElasticFDA")'  && \
     # Updating Julia Packages \
     julia -e 'Pkg.init()' && \
     julia -e 'Pkg.update()' && \
     # Precompile Julia packages \
-    julia -e 'using ElasticFDA'
+    #julia -e 'using ElasticFDA'
     
 CMD ["julia"]
 #ADD  wade.jl  add my own julia file
