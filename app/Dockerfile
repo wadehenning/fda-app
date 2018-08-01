@@ -15,7 +15,7 @@ RUN julia -e 'Pkg.add("Dierckx")'  && \
     #julia -e 'Pkg.build("Dierckx","NLopt","ElasticFDA")'  && \
     # Updating Julia Packages \
     julia -e 'Pkg.init()' && \
-    julia -e 'Pkg.update()' && \
+    julia -e 'Pkg.update()' 
     # Precompile Julia packages \
     #julia -e 'using ElasticFDA'
     
