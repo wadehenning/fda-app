@@ -2,11 +2,12 @@ FROM julia
 
 #ElasticFDA Requirements
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    gfortran \
-    make \
-    gcc && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends && \
+    apt-get install -y gfortran && \
+    apt-get install -y make && \
+    apt-get install -y gcc 
+    #&& apt-get clean && \
+    #rm -rf /var/lib/apt/lists/*
 
 #Install Packages
 RUN julia -e 'Pkg.add("Dierckx")'  && \  
