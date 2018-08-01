@@ -7,8 +7,9 @@ RUN apt-get update && \
     apt-get install -y make && \
     apt-get install -y curl && \
     apt-get install -y m4 && \
-    apt-get install -y libblas && \
-    apt-get install -y liblapack && \
+    apt-get install -y liblapack-dev && \
+    apt-get install -y libblas-dev && \
+
     apt-get install -y g++ && \
     apt-get install -y gcc 
     #&& apt-get clean && \
