@@ -15,8 +15,7 @@ RUN apt-get update && \
     apt-get install -y m4 && \
     apt-get install -y liblapack-dev && \
     apt-get install -y libblas-dev && \
-    apt-get install -y g++ && \
-    apt-get install -y gcc-multilib
+    apt-get install -y g++   
     #&& apt-get clean && \
     #rm -rf /var/lib/apt/lists/*
 
