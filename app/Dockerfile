@@ -6,7 +6,6 @@ RUN apt-get update && \
     apt-get install -y rpm build-essential && \
     apt-get install -y  libstdc++6 && \
     apt-get install -y  rpm && \
-    apt-get install -y  libgtk2.0-0_2.24.32-2_i386 && \
     apt-get install -y gfortran-8-muiltilib && \
     apt-get install -y gdb && \
     apt-get install -y make && \
