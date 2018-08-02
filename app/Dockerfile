@@ -5,14 +5,17 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends && \
     apt-get install -y rpm build-essential && \
     apt-get install -y  libstdc++6 && \
+    apt-get install -y  rpm && \
+    apt-get install -y gcc-fortran
     apt-get install -y gfortran && \
+    apt-get install -y gdb && \
     apt-get install -y make && \
     apt-get install -y curl && \
     apt-get install -y m4 && \
     apt-get install -y liblapack-dev && \
     apt-get install -y libblas-dev && \
     apt-get install -y g++ && \
-    apt-get install -y gcc 
+    apt-get install -y gcc-multilib
     #&& apt-get clean && \
     #rm -rf /var/lib/apt/lists/*
 
