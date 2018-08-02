@@ -5,7 +5,11 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends && \
     apt-get install -y rpm build-essential && \
     apt-get install -y  libstdc++6 && \
+    apt-get install -y  libidn11:i386  && \
+    apt-get install -y  libglu1-mesa:i386  && \
+    apt-get install -y  libxmu6:i386 && \
     apt-get install -y  rpm && \
+    apt-get install -y  libgtk2.0-0:i386  && \
     apt-get install -y gfortran && \
     apt-get install -y gdb && \
     apt-get install -y make && \
