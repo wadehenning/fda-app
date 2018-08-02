@@ -6,7 +6,6 @@ RUN apt-get update && \
     apt-get install -y rpm build-essential && \
     apt-get install -y  libstdc++6 && \
     apt-get install -y  rpm && \
-    apt-get install -y gcc-fortran && \
     apt-get install -y gfortran && \
     apt-get install -y gdb && \
     apt-get install -y make && \
