@@ -2,6 +2,12 @@ FROM julia
 
 #ElasticFDA Requirements
 RUN apt-get update && \
+    apt-get install -y gcc-8-base && \
+    apt-get install -y gcc-8-multilib && \
+    apt-get install -y gfortran-8 && \
+    apt-get install -y lib64gfortran-8-dev && \
+    apt-get install -y libn32gfortran-8-dev && \
+    apt-get install -y libx32gfortran-8-dev && \
     apt-get install -y --no-install-recommends && \
     apt-get install -y rpm build-essential && \
     apt-get install -y  libstdc++6 && \
