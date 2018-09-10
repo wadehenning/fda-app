@@ -1,4 +1,4 @@
-FROM julia:1.0.0-stretch
+FROM julia
 
 
 
