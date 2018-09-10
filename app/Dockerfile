@@ -25,8 +25,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     #rm -rf /var/lib/apt/lists/*
 
 #Install Packages
-RUN julia -e 'import Pkg' && \
-    julia -e 'Pkg.add("ElasticFDA")'  && \
+    julia -e 'import Pkg; Pkg.add("ElasticFDA")'  && \
     #julia -e 'Pkg.build("ElasticFDA")'  && \
     # Updating Julia Packages \
     julia -e 'Pkg.init()' && \
