@@ -1,4 +1,4 @@
-FROM julia:1.0.0
+FROM julia:0.7.0
 
 
 
