@@ -1,7 +1,10 @@
 FROM julia
 
+
+
 #ElasticFDA Requirements
-RUN apt-get update && \
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections  && \
+    apt-get update && \
     apt-get install -y --no-install-recommends && \
     apt-get install -y apt-utils && \
     apt-get install dialog apt-utils -y && \
