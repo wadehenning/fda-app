@@ -32,7 +32,9 @@ RUN julia -e 'import Pkg; Pkg.add("ElasticFDA")'  && \
     julia -e 'import Pkg; Pkg.update()' 
     # Precompile Julia packages \
     #julia -e 'using ElasticFDA'
-    
+
+ADD src /
+
 CMD ["/adder.jl"]
 #ADD  wade.jl  add my own julia file
 #CMD["julia", "/wade.jl"]   call my own julia file
