@@ -26,7 +26,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 #Install Packages
 RUN julia -e 'import Pkg; Pkg.add("ElasticFDA"); Pkg.add("JSON"); Pkg.add("HTTP");'  && \
-    #julia -e 'Pkg.add("ElasticFDA")'  && \
+    julia -e 'import Pkg; Pkg.clone("https://github.com/amellnik/Joseki.jl.git")'  && \
     #julia -e 'Pkg.build("ElasticFDA")'  && \
     # Updating Julia Packages \  
     julia -e 'import Pkg; Pkg.update()' 
@@ -35,6 +35,6 @@ RUN julia -e 'import Pkg; Pkg.add("ElasticFDA"); Pkg.add("JSON"); Pkg.add("HTTP"
 
 ADD src /
 
-CMD ["/adder.jl"]
+CMD ["/server.jl"]
 #ADD  wade.jl  add my own julia file
 #CMD["julia", "/wade.jl"]   call my own julia file
