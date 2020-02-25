@@ -12,7 +12,8 @@ function pow(req::HTTP.Request)
     # error handler will deal with it.
     x = parse(Float32, j["x"])
     y = parse(Float32, j["y"])
-    json_responder(req, rand(x,y))
+    A=rand(x,y)
+    json_responder(req, A)
 end
 
 # This function takes two numbers n and k from a JSON-encoded request
