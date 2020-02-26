@@ -12,12 +12,29 @@ function pow(req::HTTP.Request)
     # error handler will deal with it.
     x = parse(Float32, j["x"])
     y = parse(Float32, j["y"])
+    json_responder(req, x^y)
+end
+
+# This function takes two numbers n and k from a JSON-encoded request
+# body and returns binomial(n, k)
+
+# This function takes two numbers x and y from the query string and returns x^y
+# In this case they need to be identified by name and it should be called with
+# something like 'http://localhost:8000/pow/?x=2&y=3'
+function returnmx(req::HTTP.Request)
+    j = HTTP.queryparams(HTTP.URI(req.target))
+    has_all_required_keys(["x", "y"], j) || return error_responder(req, "You need to specify values for x and y!")
+    # Try to parse the values as numbers.  If there's an error here the generic
+    # error handler will deal with it.
+    x = parse(Float32, j["x"])
+    y = parse(Float32, j["y"])
     A=rand(x,y)
     json_responder(req, A)
 end
 
 # This function takes two numbers n and k from a JSON-encoded request
 # body and returns binomial(n, k)
+
 function bin(req::HTTP.Request)
     j = try
         body_as_dict(req)
