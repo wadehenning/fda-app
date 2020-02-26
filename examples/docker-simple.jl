@@ -26,8 +26,8 @@ function returnmx(req::HTTP.Request)
     has_all_required_keys(["x", "y"], j) || return error_responder(req, "You need to specify values for x and y!")
     # Try to parse the values as numbers.  If there's an error here the generic
     # error handler will deal with it.
-    x = parse(Float32, j["x"])
-    y = parse(Float32, j["y"])
+    x = parse(Int, j["x"])
+    y = parse(Int, j["y"])
     A=rand(x,y)
     json_responder(req, A)
 end
