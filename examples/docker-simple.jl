@@ -50,6 +50,7 @@ end
 # Make a router and add routes for our endpoints.
 endpoints = [
     (pow, "GET", "/pow"),
+    (returnmx, "GET", "/returnmx"),
     (bin, "POST", "/bin")
 ]
 r = Joseki.router(endpoints)
