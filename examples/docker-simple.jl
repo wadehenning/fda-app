@@ -51,7 +51,8 @@ end
 endpoints = [
     (pow, "GET", "/pow"),
     (returnmx, "GET", "/returnmx"),
-    (bin, "POST", "/bin")
+    (bin, "POST", "/bin"),
+    (req -> req.response, "OPTIONS", "*")
 ]
 r = Joseki.router(endpoints)
 
